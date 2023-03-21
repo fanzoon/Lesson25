@@ -31,8 +31,8 @@ public class SqlHomework {
                         SELECT
                             author.name AS name_author,
                             author.surname AS surname_author
-                        FROM author JOIN book ON author.id = book.author_id\s
-                        WHERE book.pages > 300\s
+                        FROM author JOIN book ON author.id = book.author_id
+                        WHERE book.pages > 300
                         GROUP BY author.name, author.surname;"""
         );
     }
