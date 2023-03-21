@@ -28,12 +28,11 @@ public class SqlHomework {
 
                         SELECT * FROM book WHERE book.pages > 300;
 
-                        SELECT
+                        SELECT DISTINCT
                             author.name AS name_author,
                             author.surname AS surname_author
                         FROM author JOIN book ON author.id = book.author_id
-                        WHERE book.pages > 300
-                        GROUP BY author.name, author.surname;"""
+                        WHERE book.pages > 300;"""
         );
     }
 }
