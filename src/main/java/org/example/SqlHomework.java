@@ -14,6 +14,7 @@ public class SqlHomework {
                         UPDATE author SET surname = 'Lermontov' WHERE id = 3;
 
                         INSERT INTO book (title, author_id, pages) values ('Борис Годунов', 1, 250);
+                        INSERT INTO book (title, author_id, pages) values ('Капитанская дочка', 1, 400);
                         INSERT INTO book (title, author_id, pages) values ('Евгений Онегин', 1, 350);
                         INSERT INTO book (title, author_id, pages) values ('Граф Монте-Кристо', 2, 280);
                         INSERT INTO book (title, author_id, pages) values ('Вишневый сад', 4, 280);
@@ -29,10 +30,10 @@ public class SqlHomework {
 
                         SELECT
                             author.name AS name_author,
-                            author.surname AS surname_author,
-                            book.title AS Book_title,
-                            book.pages AS number_of_pages
-                        FROM author LEFT OUTER JOIN book ON author.id = book.author_id WHERE book.pages > 300;"""
+                            author.surname AS surname_author
+                        FROM author JOIN book ON author.id = book.author_id\s
+                        WHERE book.pages > 300\s
+                        GROUP BY author.name, author.surname;"""
         );
     }
 }
